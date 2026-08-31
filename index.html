@@ -1,96 +1,25 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>BEREK — Masz? Szukasz? Berek połączy.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="app.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BEREK</title>
+<link rel="stylesheet" href="app.css" />
 </head>
 <body>
-  <div class="desktop-hint">
-    <strong>BEREK · prototyp</strong>
-    Klikaj jak w aplikacji. Na telefonie interfejs wypełnia ekran.
-  </div>
-
-  <div class="stage">
-    <div class="phone">
-      <div class="statusbar">
-        <span>20:22</span>
-        <span>BEREK</span>
-        <span>5G · 81%</span>
-      </div>
-      <div id="app" class="app">
-        <div class="pad" style="padding-top:6px">
-          <div class="between">
-            <div>
-              <div class="kicker">Warszawa · kolekcja</div>
-              <div class="logo mt-8">BEREK</div>
-            </div>
-            <button class="avatar" data-go="profile">AK</button>
-          </div>
-          <p class="muted mt-8" style="font-family:var(--display);font-size:18px;color:var(--text)">
-            Masz? Szukasz? Berek połączy.
-          </p>
-        </div>
-        <div class="hero">
-          <img src="assets/hero-vinyls.jpg" alt="">
-          <div class="veil">
-            <div class="tiny faint">MAM → SZUKAM → BEREK ŁĄCZY → DZIAŁAMY</div>
-            <div class="h3 mt-8">8 przedmiotów · 2 870 zł</div>
-          </div>
-        </div>
-        <div class="pad">
-          <button class="card match-banner press btn-block" data-go="match" data-id="M1" style="text-align:left">
-            <div class="kicker">🎯 Berek Match</div>
-            <div class="h3 mt-8">Anna szuka Twojego Pink Floyd</div>
-            <p class="small muted mt-8">The Dark Side of the Moon · SHVL 804 · zgodność 98%</p>
-          </button>
-          <div class="grid-4 mt-16">
-            <button class="tile press" data-go="collection"><span class="ico">📀</span><span class="lbl">Moja kolekcja</span><span class="sub">8 szt.</span></button>
-            <button class="tile press" data-go="wants"><span class="ico">🔎</span><span class="lbl">Szukam</span><span class="sub">2 ogłoszenia</span></button>
-            <button class="tile press" data-go="add"><span class="ico">＋</span><span class="lbl">Dodaj</span><span class="sub">zdjęcie / skan</span></button>
-            <button class="tile press" data-go="find"><span class="ico">🌐</span><span class="lbl">Znajdź</span><span class="sub">w sieci Berek</span></button>
-            <button class="tile press" data-go="sell"><span class="ico">🏷</span><span class="lbl">Sprzedaj</span><span class="sub">oferta + post</span></button>
-            <button class="tile press" data-go="give"><span class="ico">❤️</span><span class="lbl">Oddaj</span><span class="sub">Aleje Życia</span></button>
-            <button class="tile press" data-go="recycle"><span class="ico">♻️</span><span class="lbl">Recykling</span><span class="sub">partnerzy</span></button>
-            <button class="tile press" data-go="profile"><span class="ico">👤</span><span class="lbl">Mój profil</span><span class="sub">Ania</span></button>
-          </div>
-          <div class="grid-2 mt-12">
-            <button class="tile press" data-go="inherit"><span class="ico">🤍</span><span class="lbl">Kolekcja po bliskich</span><span class="sub">8 kroków + raport</span></button>
-            <button class="tile press" data-go="experts"><span class="ico">✋</span><span class="lbl">Potrzebuję pomocy</span><span class="sub">eksperci Berka</span></button>
-          </div>
-        </div>
-      </div>
-      <div id="toast-slot"></div>
-      <nav class="tabbar">
-        <button class="tab active" data-go="home">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10.5V20h12v-9.5"/></svg>
-          <span>Start</span>
-        </button>
-        <button class="tab" data-go="collection">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>
-          <span>Kolekcja</span>
-        </button>
-        <button class="tab plus" data-go="add">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-          <span>+</span>
-        </button>
-        <button class="tab" data-go="wants">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="6"/><path d="M20 20l-3.5-3.5"/></svg>
-          <span>Szukam</span>
-        </button>
-        <button class="tab" data-go="profile">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.2"/><path d="M5 19c1.4-3.2 3.8-4.6 7-4.6S17.6 15.8 19 19"/></svg>
-          <span>Profil</span>
-        </button>
-      </nav>
-    </div>
-  </div>
-
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+<div class="stage"><div class="phone">
+<div class="statusbar"><span>BEREK</span></div>
+<div id="app" class="app"></div>
+<div id="toast-slot"></div>
+<nav class="tabbar">
+<button class="tab active" data-go="home"><span>Start</span></button>
+<button class="tab" data-go="collection"><span>Kolekcja</span></button>
+<button class="tab plus" data-go="add"><span>+</span></button>
+<button class="tab" data-go="wants"><span>Szukam</span></button>
+<button class="tab" data-go="profile"><span>Profil</span></button>
+</nav>
+</div></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
